@@ -6,10 +6,8 @@ using System.Threading.Tasks;
 
 namespace Texventure
 {
-    class Program
+    class Console
     {
-        static void Main(string[] args)
-        {
-        }
+
     }
 }

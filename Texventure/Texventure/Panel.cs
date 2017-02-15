@@ -6,8 +6,11 @@ using System.Threading.Tasks;
 
 namespace Texventure
 {
-    class Console
+    public class Panel
     {
+        public string name;
+        public uint id;
 
+        public virtual void render() { }
     }
 }

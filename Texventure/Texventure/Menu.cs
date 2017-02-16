@@ -61,6 +61,8 @@ namespace Texventure
                     break;
                 }
             }
+
+            currentlySelected = Mathf.Clamp<uint>(currentlySelected, 0, (uint)menuList.Count - 1);
         }
 
         public void addOption(string text, option function)

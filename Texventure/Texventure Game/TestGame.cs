@@ -14,6 +14,8 @@ namespace Texventure_Game
 
         public override void initialize(uint width, uint height, string title)
         {
+            base.initialize(width, height, title);
+
             TexConsole con = new TexConsole(width, height, title);
 
             mainMenu = new MainMenu();

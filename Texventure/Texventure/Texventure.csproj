@@ -44,8 +44,11 @@
   <ItemGroup>
     <Compile Include="Game.cs" />
     <Compile Include="InputListener.cs" />
+    <Compile Include="InputParser.cs" />
+    <Compile Include="Mathf.cs" />
     <Compile Include="Menu.cs" />
     <Compile Include="Panel.cs" />
+    <Compile Include="Room.cs" />
     <Compile Include="TexConsole.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -15,11 +15,23 @@ namespace Texventure
 
         public bool isRunning() { return m_Running; }
 
-        public Panel currentPanel = null;
+        public static Panel currentPanel = null;
+        public static Room currentRoom = null;
+        public string gameName = "";
+        public uint width, height;
 
-        public virtual void initialize(uint width, uint height, string title) { }
+        public virtual void initialize(uint width, uint height, string title)
+        {
+            this.width = width;
+            this.height = height;
+            this.gameName = title;
+        }
         public virtual void run() { m_Running = true; }
         public virtual void close() { m_Running = false; }
+
+        //protected virtual void internalOnChangeRoom() { }
+
+        //public static void onChangeRoom() { internalOnChangeRoom(); }
 
         public virtual void parseInputLine(string input)
         {

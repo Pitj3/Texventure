@@ -42,6 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="TextFlags.cs" />
     <Compile Include="Game.cs" />
     <Compile Include="InputListener.cs" />
     <Compile Include="InputParser.cs" />

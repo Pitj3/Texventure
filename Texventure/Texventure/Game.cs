@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Texventure
 {
-    public class Game : InputListener
+    public abstract class Game : InputListener
     {
         public Game()
         {
@@ -18,12 +18,12 @@ namespace Texventure
         public static Panel currentPanel = null;
         public static Room currentRoom = null;
         public string gameName = "";
-        public uint width, height;
+        public static uint width, height;
 
-        public virtual void initialize(uint width, uint height, string title)
+        public virtual void initialize(uint _width, uint _height, string title)
         {
-            this.width = width;
-            this.height = height;
+            width = _width;
+            height = _height;
             this.gameName = title;
         }
         public virtual void run() { m_Running = true; }
@@ -33,10 +33,7 @@ namespace Texventure
 
         //public static void onChangeRoom() { internalOnChangeRoom(); }
 
-        public virtual void parseInputLine(string input)
-        {
-            throw new NotImplementedException();
-        }
+        public abstract void parseInputLine(string input);
 
         private bool m_Running = false;
     }

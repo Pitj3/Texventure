@@ -6,11 +6,9 @@ using System.Threading.Tasks;
 
 namespace Texventure
 {
-    public abstract class Panel
+    public class TextFlags
     {
-        public string name;
-        public uint id;
-
-        public abstract void render(int flags);
+        public static int TEXT_CENTERED_X = 0x01;
+        public static int TEXT_CENTERED_Y = 0x02;
     }
 }

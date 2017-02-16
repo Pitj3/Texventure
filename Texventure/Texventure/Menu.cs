@@ -11,6 +11,7 @@ namespace Texventure
     {
         public uint id;
         public string text;
+        public int flags;
     }
 
     public class Menu : Panel
@@ -22,13 +23,40 @@ namespace Texventure
 
         public Menu() { }
 
-        public override void render()
+        public override void render(int flags)
         {
             Console.Clear();
+
+            int yoffset = 0;
+
+            if((flags & TextFlags.TEXT_CENTERED_Y) == TextFlags.TEXT_CENTERED_Y)
+            {
+                yoffset = (int)(Game.height - menuList.Count) / 2;
+                for(int y = 0; y < yoffset; y++)
+                {
+                    Console.WriteLine();
+                }
+            }
 
             int i = 0;
             foreach (KeyValuePair<MenuStringID, option> pair in menuList)
             {
+                int xoffset = 0;
+                if((pair.Key.flags & TextFlags.TEXT_CENTERED_X) == TextFlags.TEXT_CENTERED_X)
+                {
+                    // center text on x
+                    xoffset = (int)(Game.width - (pair.Key.text.Length + 3)) / 2;
+                }
+                if ((pair.Key.flags & TextFlags.TEXT_CENTERED_Y) == TextFlags.TEXT_CENTERED_Y)
+                {
+                    // center text on x
+                }
+
+                if(xoffset > 0)
+                {
+                    Console.Write("".PadLeft(xoffset, ' '));
+                }
+
                 if (i == currentlySelected)
                     Console.Write(" - ");
                 else
@@ -65,11 +93,12 @@ namespace Texventure
             currentlySelected = Mathf.Clamp<uint>(currentlySelected, 0, (uint)menuList.Count - 1);
         }
 
-        public void addOption(string text, option function)
+        public void addOption(string text, option function, int flags = 0)
         {
             MenuStringID id = new MenuStringID();
             id.id = (uint)menuList.Count;
             id.text = text;
+            id.flags = flags;
             menuList.Add(id, function);
         }
     }

@@ -29,7 +29,7 @@ namespace Texventure_Game
             while(isRunning())
             {
                 if (currentPanel != null)
-                    currentPanel.render();
+                    currentPanel.render(TextFlags.TEXT_CENTERED_Y);
                 else
                     parseInputLine(Console.ReadLine());
             }

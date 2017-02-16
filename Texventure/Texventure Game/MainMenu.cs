@@ -27,7 +27,7 @@ namespace Texventure_Game
 
         public MainMenu()
         {
-            addOption("Start new game", newGame);
+            addOption("Start new game", newGame, TextFlags.TEXT_CENTERED_X | TextFlags.TEXT_CENTERED_Y);
             addOption("Help", help);
             addOption("Quit", quit);
         }

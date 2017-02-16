@@ -4,7 +4,6 @@
 # wget --no-check-certificate http://gist.githubusercontent.com/kmorcinek/2710267/raw/.gitignore
 
 # User-specific files
-*.suo
 *.user
 *.sln.docstates
 
@@ -184,9 +183,6 @@ $RECYCLE.BIN/
 
 # Visual Studio 2014 CTP
 **/*.sln.ide
-
-# Visual Studio temp something
-.vs/
 
 **/node_modules/*
 
